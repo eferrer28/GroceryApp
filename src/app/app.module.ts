@@ -15,7 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCCVJNUHxsVIPtdq_jaT0r0tZ1w_oE_N3g",
+    apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
     authDomain: "grocery-app-c4189.firebaseapp.com",
     databaseURL: "https://grocery-app-c4189.firebaseio.com",
     projectId: "grocery-app-c4189",
