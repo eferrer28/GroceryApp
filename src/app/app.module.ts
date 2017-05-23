@@ -10,6 +10,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCCVJNUHxsVIPtdq_jaT0r0tZ1w_oE_N3g",
+    authDomain: "grocery-app-c4189.firebaseapp.com",
+    databaseURL: "https://grocery-app-c4189.firebaseio.com",
+    projectId: "grocery-app-c4189",
+    storageBucket: "grocery-app-c4189.appspot.com",
+    messagingSenderId: "790095058387"
+
+};
+
+
+
 @NgModule({
   declarations: [
     MyApp,
