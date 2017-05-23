@@ -34,6 +34,9 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -45,8 +48,8 @@ const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
   ]
 })
 export class AppModule {}
