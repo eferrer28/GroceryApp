@@ -17,4 +17,8 @@ export class FirebaseProvider {
   removeItem(id) {
     this.afd.list('/shoppingItems/').remove(id);
   }
+
+  clearList() {
+    this.afd.list('/shoppingItems').remove();
+  }
 }

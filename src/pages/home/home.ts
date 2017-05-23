@@ -22,4 +22,8 @@ export class HomePage {
   removeItem(id) {
     this.firebaseProvider.removeItem(id);
   }
+
+  clearList() {
+    this.firebaseProvider.clearList();
+  }
 }
