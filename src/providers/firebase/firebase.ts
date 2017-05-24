@@ -21,4 +21,9 @@ export class FirebaseProvider {
   clearList() {
     this.afd.list('/shoppingItems').remove();
   }
+
+  addToPantry() {
+    this.afd.list('/pantryItems/').push(name);
+
+  }
 }

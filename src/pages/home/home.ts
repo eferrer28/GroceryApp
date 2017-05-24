@@ -26,4 +26,13 @@ export class HomePage {
   clearList() {
     this.firebaseProvider.clearList();
   }
+
+  addToPantry() {
+    this.shoppingItems.subscribe(shoppingItems => {
+        // items is an array
+        shoppingItems.forEach(item => {
+            console.log('Item:', item.key);
+        });
+    });
+}
 }
