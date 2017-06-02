@@ -28,11 +28,14 @@ export class HomePage {
   }
 
   addToPantry() {
+
+
     this.shoppingItems.subscribe(shoppingItems => {
         // items is an array
         shoppingItems.forEach(item => {
-            console.log('Item:', item.key);
+            console.log('Item:', item);
         });
     });
+    //console.log(this.shoppingItems);
 }
 }
