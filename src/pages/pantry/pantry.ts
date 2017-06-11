@@ -18,7 +18,7 @@ export class PantryPage {
   pantryItems: FirebaseListObservable<any[]>;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public firebaseProvider: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.pantryItems = this.firebaseProvider.getPantryItems();
 
   }
