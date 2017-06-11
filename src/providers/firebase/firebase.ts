@@ -10,6 +10,11 @@ export class FirebaseProvider {
     return this.afd.list('/shoppingItems/');
   }
 
+  getPantryItems() {
+    return this.afd.list('/pantryItems/');
+  }
+
+
   addItem(name) {
     this.afd.list('/shoppingItems/').push(name);
   }
