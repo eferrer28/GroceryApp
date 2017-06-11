@@ -22,7 +22,7 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems').remove();
   }
 
-  addToPantry() {
+  addToPantry(name) {
     this.afd.list('/pantryItems/').push(name);
 
   }

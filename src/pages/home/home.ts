@@ -9,7 +9,9 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class HomePage {
   shoppingItems: FirebaseListObservable<any[]>;
+
   newItem = '';
+  list = [];
 
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
     this.shoppingItems = this.firebaseProvider.getShoppingItems();
@@ -17,6 +19,7 @@ export class HomePage {
 
   addItem() {
     this.firebaseProvider.addItem(this.newItem);
+    this.list.push(this.newItem);
   }
 
   removeItem(id) {
@@ -25,6 +28,9 @@ export class HomePage {
 
   clearList() {
     this.firebaseProvider.clearList();
+    this.list.splice(0);
+
+
   }
 
   addToPantry() {
@@ -36,6 +42,13 @@ export class HomePage {
             console.log('Item:', item);
         });
     });
-    //console.log(this.shoppingItems);
+    console.log(this.list);
+    var i;
+    for (i in this.list) {
+      console.log(this.list[i]);
+      this.firebaseProvider.addToPantry(this.list[i]);
+
+    }
+
 }
 }
