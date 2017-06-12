@@ -56,9 +56,10 @@ const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    RecipeServiceProvider,
+
     FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RecipeServiceProvider,
   ]
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http'
-import { RecipeService } from './../..providers/recipe-service';
+import { RecipeServiceProvider } from './../..providers/recipe-service/recipe-service';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 /**
@@ -19,7 +19,7 @@ export class RecipesPage {
   name: Observable<any>;
 
   constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams,
-              public recipeService: RecipeService) {
+              public recipeService: RecipeServiceProvider) {
     console.log("hey!")
     this.name = recipeService.getData();
 
