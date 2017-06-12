@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PantryPage } from '../pages/pantry/pantry';
+import { RecipesPage } from '../pages/recipes/recipes';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +16,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { RecipeServiceProvider } from '../providers/recipe-service/recipe-service';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
@@ -33,7 +35,8 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    PantryPage
+    PantryPage,
+    RecipesPage
   ],
   imports: [
     BrowserModule,
@@ -47,13 +50,15 @@ const firebaseConfig = {
     MyApp,
     HomePage,
     ListPage,
-    PantryPage
+    PantryPage,
+    RecipesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RecipeServiceProvider,
   ]
 })
 export class AppModule {}
