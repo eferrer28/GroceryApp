@@ -57,7 +57,6 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     RecipeServiceProvider,
-
     FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

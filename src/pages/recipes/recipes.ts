@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http'
-import { RecipeServiceProvider } from './../..providers/recipe-service/recipe-service';
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/map'
+import { Http } from '@angular/http';
+import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 /**
  * Generated class for the RecipesPage page.
  *
@@ -16,12 +16,11 @@ import 'rxjs/add/operator/map'
   templateUrl: 'recipes.html',
 })
 export class RecipesPage {
-  name: Observable<any>;
+  //name: Observable<any>;
 
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams,
-              public recipeService: RecipeServiceProvider) {
+  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, public recipeService: RecipeServiceProvider ) {
     console.log("hey!")
-    this.name = recipeService.getData();
+    //this.name = recipeService.getData();
 
   }
 
