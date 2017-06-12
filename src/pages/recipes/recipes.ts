@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http'
 import { RecipeService } from './../..providers/recipe-service';
-
+import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 /**
  * Generated class for the RecipesPage page.
