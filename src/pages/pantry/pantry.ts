@@ -2,6 +2,8 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { RecipesPage } from '../../pages/recipes/recipes';
+
 
 /**
  * Generated class for the PantryPage page.
@@ -32,6 +34,7 @@ export class PantryPage {
     if(this.selected.length == 3){
       console.log("fuck");
       console.log(this.selected);
+      this.navCtrl.push(RecipesPage, this.selected);
     }
   }
 
