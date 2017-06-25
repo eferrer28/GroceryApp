@@ -28,4 +28,11 @@ export class PantryPage {
     console.log('ionViewDidLoad PantryPage');
   }
 
+  onSelect(){
+    if(this.selected.length == 3){
+      console.log("fuck");
+      console.log(this.selected);
+    }
+  }
+
 }

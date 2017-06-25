@@ -32,7 +32,7 @@
   <ion-item>
     <ion-label>Pantry Items</ion-label>
 
-  <ion-select multiple="true" [(ngModel)]="selected">
+  <ion-select (ionChange)="onSelect()" multiple="true" [(ngModel)]="selected">
         <ion-option *ngFor="let items of pantryItems | async">
           {{ items.$value }}
   </ion-option>
