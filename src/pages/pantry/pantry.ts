@@ -16,6 +16,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class PantryPage {
   pantryItems: FirebaseListObservable<any[]>;
+  selected = [];
 
 
   constructor(public firebaseProvider: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
