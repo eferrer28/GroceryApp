@@ -19,6 +19,7 @@ import { RecipesPage } from '../../pages/recipes/recipes';
 export class PantryPage {
   pantryItems: FirebaseListObservable<any[]>;
   selected = [];
+  public items: Array<any>;
 
 
   constructor(public firebaseProvider: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -36,6 +37,10 @@ export class PantryPage {
       console.log(this.selected);
       this.navCtrl.push(RecipesPage, this.selected);
     }
+  }
+
+  add(item){
+    console.log(item);
   }
 
 }
