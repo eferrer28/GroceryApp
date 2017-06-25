@@ -28,14 +28,17 @@
     </ion-item-sliding>
   </ion-list>
 
-
+<ion-list>
   <ion-item>
+    <ion-label>Pantry Items</ion-label>
+
   <ion-select multiple="true" [(ngModel)]="selected">
         <ion-option *ngFor="let items of pantryItems | async">
           {{ items.$value }}
   </ion-option>
   </ion-select>
-  <ion-item>
 
+</ion-item>
+</ion-list>
 
 </ion-content>
