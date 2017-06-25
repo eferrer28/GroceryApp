@@ -15,7 +15,7 @@ export class RecipeServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello RecipeServiceProvider Provider');
-    this.loadStuff();
+    //this.loadStuff();
 
     /*
     let opt: RequestOptions;
@@ -37,13 +37,15 @@ export class RecipeServiceProvider {
     opt = new RequestOptions({
     headers: myHeaders
   })
-    this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(res => res.json())
+    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(res => res.json())
+    /*
     .subscribe(
       res => console.log(res),
-      lessons => this.lessons = lessons
+      lessons => this.lessons = lessons.json()
       //err => console.error(err)
 
-    );
+    );*/
+
   }
 
 

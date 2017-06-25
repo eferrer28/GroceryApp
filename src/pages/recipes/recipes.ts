@@ -17,6 +17,7 @@ import 'rxjs/add/operator/map';
 })
 export class RecipesPage {
   //name: Observable<any>;
+  recipeData = [];
 
   constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, public recipeService: RecipeServiceProvider ) {
     console.log("hey!")
@@ -26,6 +27,11 @@ export class RecipesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipesPage');
+    this.recipeService.loadStuff().subscribe(
+      data => {this.recipeData = data
+      console.log(data);
+      console.log(this.recipeData);
+    });
   }
 
 }
