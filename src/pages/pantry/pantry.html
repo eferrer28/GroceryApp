@@ -18,7 +18,7 @@
 <ion-content padding>
 
   <ion-list>
-    <button ion-item *ngFor="let item of pantryItems  | async" (click)="add(item)">
+    <button ion-item *ngFor="let item of pantryItems  | async" (click)="add(item.$value)">
       {{ item.$value }}
 
 </button>
