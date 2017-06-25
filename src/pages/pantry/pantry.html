@@ -17,6 +17,18 @@
 
 <ion-content padding>
 
+    <ion-list>
+      <ion-label *ngFor="let item of pantryItems  | async">
+        {{ item.$value }}
+
+      </ion-label>
+      <ion-checkbox >
+      </ion-checkbox>
+
+    </ion-list>
+
+
+
   <ion-list>
     <ion-item-sliding *ngFor="let item of pantryItems | async">
       <ion-item>
