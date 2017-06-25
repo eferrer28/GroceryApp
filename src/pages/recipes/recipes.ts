@@ -30,7 +30,7 @@ export class RecipesPage {
     this.recipeService.loadStuff().subscribe(
       data => {this.recipeData = data
       console.log(data);
-      console.log(this.recipeData);
+      console.log(JSON.stringify(this.recipeData));
     });
   }
 
