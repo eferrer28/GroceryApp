@@ -20,6 +20,8 @@ export class PantryPage {
   pantryItems: FirebaseListObservable<any[]>;
   selected = [];
   public items: Array<any>;
+  currentSelected: number = null;
+
 
 
   constructor(public firebaseProvider: FirebaseProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -39,8 +41,10 @@ export class PantryPage {
     }
   }
 
-  add(item){
+  add(item, idx:number){
     console.log(item);
+    //this.item = item;
+    this.currentSelected = idx;
   }
 
 }
