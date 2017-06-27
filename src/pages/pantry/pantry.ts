@@ -45,6 +45,7 @@ export class PantryPage {
     console.log(item);
     //this.item = item;
     this.currentSelected = idx;
+    console.log(this.currentSelected);
   }
 
 }
