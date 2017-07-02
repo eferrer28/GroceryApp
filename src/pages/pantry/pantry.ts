@@ -43,10 +43,16 @@ export class PantryPage {
       this.navCtrl.push(RecipesPage, this.selected);
     }
   }
-
+  /*
   checkAvailability(arr, val ){
     return arr.some(arrVal =>  val === arrVal);
   }
+  */
+  checkAvailability(arr, val) {
+  return arr.some(function(arrVal) {
+    return val === arrVal;
+  });
+}
 
 
 
@@ -56,11 +62,19 @@ export class PantryPage {
     this.currentSelected = idx;
     console.log(this.currentSelected);
 
+
     if(this.checkAvailability(this.ingredients, item) == false){
       this.ingredients.push(item);
     }
+    else{
+      var index = this.ingredients.indexOf(item, 0);
+      if (index > -1) {
+        this.ingredients.splice(index, 1);
+}
+      }
     console.log(this.ingredients);
 
-  }
 
+
+}
 }
