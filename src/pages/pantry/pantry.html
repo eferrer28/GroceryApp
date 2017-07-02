@@ -26,57 +26,7 @@
 
     </button>
 
-<!--
-    <button ion-item *ngFor="let item of pantryItems  | async; let idx = index" (click)="add(item.$value, idx)"
-    [class.selected]="idx === currentSelected">
-      {{ item.$value }}
 
-</button>
-
-
-<button ion-item *ngFor="let item of pantryItems  | async; let idx = index" (click)="add(item.$value)"
-[ngClass]="{'selected': idx === currentSelected}">
-  {{ item.$value }}
-
-</button>
-
-  </ion-list>
-
-    <ion-list>
-      <ion-item *ngFor="let item of pantryItems  | async">
-      <ion-label>{{ item.$value }}</ion-label>
-
-        <ion-checkbox>
-        </ion-checkbox>
-  </ion-item>
-    </ion-list>
-
-
-
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of pantryItems | async">
-      <ion-item>
-        {{ item.$value }}
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
-<ion-list>
-  <ion-item>
-    <ion-label>Pantry Items</ion-label>
-
-  <ion-select (ionChange)="onSelect()" multiple="true" [(ngModel)]="selected">
-        <ion-option *ngFor="let items of pantryItems | async">
-          {{ items.$value }}
-  </ion-option>
-  </ion-select>
-
-</ion-item>
-
--->
 </ion-list>
 
 
