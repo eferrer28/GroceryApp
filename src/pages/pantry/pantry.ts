@@ -21,6 +21,7 @@ export class PantryPage {
   selected = [];
   public items: Array<any>;
   currentSelected: number = null;
+  hightlightStatus: Array<boolean> = [];
 
 
 
@@ -46,6 +47,14 @@ export class PantryPage {
     //this.item = item;
     this.currentSelected = idx;
     console.log(this.currentSelected);
+  }
+
+  select(index:number){
+    this.hightlightStatus=[false,false,false,false]
+    this.hightlightStatus[index]=true
+    console.log(this.hightlightStatus)
+    return true;
+
   }
 
 }

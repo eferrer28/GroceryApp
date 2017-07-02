@@ -18,14 +18,22 @@
 <ion-content padding>
 
   <ion-list>
+    <button ion-item *ngFor="let item of pantryItems  | async; let idx = index"
+    [attr.data-selected]="false"
+    (click)="hightlightStatus[idx]=!hightlightStatus[idx]"
+    [class.selected]="hightlightStatus[idx]">
+      {{ item.$value }}
 
+    </button>
+
+<!--
     <button ion-item *ngFor="let item of pantryItems  | async; let idx = index" (click)="add(item.$value, idx)"
     [class.selected]="idx === currentSelected">
       {{ item.$value }}
 
 </button>
 
-<!--
+
 <button ion-item *ngFor="let item of pantryItems  | async; let idx = index" (click)="add(item.$value)"
 [ngClass]="{'selected': idx === currentSelected}">
   {{ item.$value }}
