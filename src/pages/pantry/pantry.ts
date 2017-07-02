@@ -44,12 +44,21 @@ export class PantryPage {
     }
   }
 
+  checkAvailability(arr, val ){
+    return arr.some(arrVal =>  val === arrVal);
+  }
+
+
+
   add(item, idx:number){
     console.log(item);
     //this.item = item;
     this.currentSelected = idx;
     console.log(this.currentSelected);
-    this.ingredients.push(item);
+
+    if(this.checkAvailability(this.ingredients, item) == false){
+      this.ingredients.push(item);
+    }
     console.log(this.ingredients);
 
   }
