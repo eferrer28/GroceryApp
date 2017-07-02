@@ -20,7 +20,7 @@
   <ion-list>
     <button ion-item *ngFor="let item of pantryItems  | async; let idx = index"
     [attr.data-selected]="false"
-    (click)="hightlightStatus[idx]=!hightlightStatus[idx]"
+    (click)="hightlightStatus[idx]=!hightlightStatus[idx]; add(item.$value, idx)"
     [class.selected]="hightlightStatus[idx]">
       {{ item.$value }}
 
@@ -39,7 +39,7 @@
   {{ item.$value }}
 
 </button>
--->
+
   </ion-list>
 
     <ion-list>
@@ -75,6 +75,10 @@
   </ion-select>
 
 </ion-item>
+
+-->
 </ion-list>
+
+
 
 </ion-content>
