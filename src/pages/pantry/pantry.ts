@@ -23,7 +23,8 @@ export class PantryPage {
 
   constructor(public firebaseProvider: FirebaseProvider,
     public navCtrl: NavController,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public localStorage: LocalstorageProvider) {
     this.pantryItems = this.firebaseProvider.getPantryItems();
 
   }

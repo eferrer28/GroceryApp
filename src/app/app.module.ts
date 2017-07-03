@@ -18,8 +18,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { RecipeServiceProvider } from '../providers/recipe-service/recipe-service';
 import { LocalstorageProvider } from '../providers/localstorage/localstorage';
-import {Storage} from '@ionic/storage';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
@@ -47,6 +46,7 @@ const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp),
+        IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,6 +63,7 @@ const firebaseConfig = {
     FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocalstorageProvider,
+    
   ]
 })
 export class AppModule {}
