@@ -17,6 +17,9 @@ import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { RecipeServiceProvider } from '../providers/recipe-service/recipe-service';
+import { LocalstorageProvider } from '../providers/localstorage/localstorage';
+import {Storage} from '@ionic/storage';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
@@ -59,6 +62,7 @@ const firebaseConfig = {
     RecipeServiceProvider,
     FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocalstorageProvider,
   ]
 })
 export class AppModule {}

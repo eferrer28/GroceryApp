@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
+import { LocalstorageProvider } from '../../providers/localstorage/localstorage';
+
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 /**
@@ -19,7 +21,11 @@ export class RecipesPage {
   //name: Observable<any>;
   recipeData = [];
 
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, public recipeService: RecipeServiceProvider ) {
+  constructor(public http: Http,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public recipeService: RecipeServiceProvider,
+    public localstorage: LocalstorageProvider) {
     console.log("hey!")
     //this.name = recipeService.getData();
 
