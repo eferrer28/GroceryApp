@@ -12,12 +12,6 @@ export class RecipeServiceProvider {
 
   constructor(public http: Http, public storage: Storage) {
     console.log('Hello RecipeServiceProvider Provider');
-    this.storage.get('thelist').then(data => {
-          console.log(data);
-          this.ourList = JSON.parse(data);
-          console.log(this.ourList);
-        });
-
 
 
 
@@ -35,14 +29,20 @@ export class RecipeServiceProvider {
   console.log(this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(data => data.json()));
 */
   }
-  loadStuff(){
-    var newString = '';
-    for(let i of this.ourList){
-        console.log(i);
-        newString += i;
-        console.log(newString);
-      };
+  callFunc(){
+    var newString = ''
+    this.storage.get('thelist').then(data => {
+          console.log(data);
+          this.ourList = JSON.parse(data);
+        //this.ourList = data;
+          console.log(this.ourList);
+        });
 
+  }
+
+  loadStuff(){
+
+    console.log(this.ourList);
 
     let opt: RequestOptions;
     let myHeaders: Headers = new Headers;

@@ -44,7 +44,9 @@ export class RecipesPage {
         });
 
     console.log(this.navParams.get('selected'));
-    /
+
+    //this.recipeService.callFunc();
+
     console.log('ionViewDidLoad RecipesPage');
     this.recipeService.loadStuff().subscribe(
       data => {this.recipeData = data
