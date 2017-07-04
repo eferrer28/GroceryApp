@@ -7,12 +7,8 @@ import {Storage} from '@ionic/storage';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-/**
- * Generated class for the RecipesPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
+
 @IonicPage()
 @Component({
   selector: 'page-recipes',

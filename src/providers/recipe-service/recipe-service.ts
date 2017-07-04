@@ -43,7 +43,8 @@ export class RecipeServiceProvider {
   loadStuff(){
 
     console.log(this.ourList);
-
+    var lengthOf = this.ourList.length;
+    console.log(lengthOf);
     var newString = '';
     var stuff = '%2C';
     for(let i of this.ourList){
@@ -62,7 +63,9 @@ export class RecipeServiceProvider {
     opt = new RequestOptions({
     headers: myHeaders
   })
-    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(res => res.json())
+    //return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(res => res.json())
+
+    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2C&limitLicense=false&number='+ lengthOf +'&ranking=1', opt).map(res => res.json())
     /*
     .subscribe(
       res => console.log(res),
@@ -72,11 +75,5 @@ export class RecipeServiceProvider {
     );*/
 
   }
-
-
-  /*
-  getData(){
-    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', this.opt).map(data => data.json());
-  }*/
 
 }
