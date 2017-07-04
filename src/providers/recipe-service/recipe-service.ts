@@ -65,7 +65,7 @@ export class RecipeServiceProvider {
   })
     //return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2Cflour%2Csugar&limitLicense=false&number=5&ranking=1', opt).map(res => res.json())
 
-    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=apples%2C&limitLicense=false&number='+ lengthOf +'&ranking=1', opt).map(res => res.json())
+    return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients='+ str +'&limitLicense=false&number='+ lengthOf +'&ranking=1', opt).map(res => res.json())
     /*
     .subscribe(
       res => console.log(res),
