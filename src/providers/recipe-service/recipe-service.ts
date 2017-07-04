@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Storage} from '@ionic/storage';
 
 /*
   Generated class for the RecipeServiceProvider provider.
@@ -12,9 +13,17 @@ import 'rxjs/add/operator/map';
 export class RecipeServiceProvider {
 
   lessons = [];
+  ourList = [];
 
-  constructor(public http: Http) {
+  constructor(public http: Http,
+  public storage: Storage) {
     console.log('Hello RecipeServiceProvider Provider');
+
+    this.storage.get('thelist').then(data => {
+          console.log(data);
+          this.ourList = JSON.parse(data);
+          console.log(this.ourList);
+        });
     //this.loadStuff();
 
     /*

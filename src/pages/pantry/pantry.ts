@@ -4,6 +4,8 @@ import { LocalstorageProvider } from '../../providers/localstorage/localstorage'
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { RecipesPage } from '../../pages/recipes/recipes';
+import {Storage} from '@ionic/storage';
+
 
 @IonicPage()
 @Component({
@@ -24,6 +26,8 @@ export class PantryPage {
   constructor(public firebaseProvider: FirebaseProvider,
     public navCtrl: NavController,
     public navParams: NavParams,
+    public storage:Storage,
+
     public localStorage: LocalstorageProvider) {
     this.pantryItems = this.firebaseProvider.getPantryItems();
 
@@ -74,4 +78,13 @@ export class PantryPage {
 
 
 }
+  getRecipes(){
+    console.log('test');
+    for(let i of this.ingredients){
+      console.log(i);
+      this.localStorage.setIngredients(i);
+    }
+    this.storage.set('thelist', JSON.stringify(this.ingredients));
+
+  }
 }

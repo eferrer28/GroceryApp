@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
 import { LocalstorageProvider } from '../../providers/localstorage/localstorage';
+import {Storage} from '@ionic/storage';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -20,18 +21,27 @@ import 'rxjs/add/operator/map';
 export class RecipesPage {
   //name: Observable<any>;
   recipeData = [];
+  ourList = [];
 
   constructor(public http: Http,
     public navCtrl: NavController,
     public navParams: NavParams,
     public recipeService: RecipeServiceProvider,
-    public localstorage: LocalstorageProvider) {
+    public localStorage: LocalstorageProvider,
+    public storage: Storage) {
     console.log("hey!")
+
     //this.name = recipeService.getData();
 
   }
 
   ionViewDidLoad() {
+
+    this.storage.get('thelist').then(data => {
+          console.log(data);
+          this.ourList = JSON.parse(data);
+          console.log(this.ourList);
+        });
 
     console.log(this.navParams.get('selected'));
 
