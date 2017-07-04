@@ -3,27 +3,24 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Storage} from '@ionic/storage';
 
-/*
-  Generated class for the RecipeServiceProvider provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class RecipeServiceProvider {
 
   lessons = [];
   ourList = [];
 
-  constructor(public http: Http,
-  public storage: Storage) {
+  constructor(public http: Http, public storage: Storage) {
     console.log('Hello RecipeServiceProvider Provider');
-
     this.storage.get('thelist').then(data => {
           console.log(data);
           this.ourList = JSON.parse(data);
           console.log(this.ourList);
         });
+
+
+
+
     //this.loadStuff();
 
     /*
@@ -39,6 +36,14 @@ export class RecipeServiceProvider {
 */
   }
   loadStuff(){
+    var newString = '';
+    for(let i of this.ourList){
+        console.log(i);
+        newString += i;
+        console.log(newString);
+      };
+
+
     let opt: RequestOptions;
     let myHeaders: Headers = new Headers;
     myHeaders.append('X-Mashape-Key', 'KMFbmMJvR5mshlzIpvvR6AEKR5TGp1ISCRJjsnd550UPefSzse');
