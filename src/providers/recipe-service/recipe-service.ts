@@ -44,6 +44,17 @@ export class RecipeServiceProvider {
 
     console.log(this.ourList);
 
+    var newString = '';
+    var stuff = '%2C';
+    for(let i of this.ourList){
+      newString += i.concat(stuff);
+      console.log(newString);
+
+    //  %2C
+    var str = newString.slice(0, -3);
+    console.log(str);
+    }
+
     let opt: RequestOptions;
     let myHeaders: Headers = new Headers;
     myHeaders.append('X-Mashape-Key', 'KMFbmMJvR5mshlzIpvvR6AEKR5TGp1ISCRJjsnd550UPefSzse');
