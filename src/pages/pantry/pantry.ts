@@ -1,7 +1,6 @@
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Component } from '@angular/core';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
-import { LocalstorageProvider } from '../../providers/localstorage/localstorage';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { RecipesPage } from '../../pages/recipes/recipes';
@@ -28,8 +27,7 @@ export class PantryPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public storage:Storage,
-    public recipeService: RecipeServiceProvider,
-    public localStorage: LocalstorageProvider) {
+    public recipeService: RecipeServiceProvider) {
     this.pantryItems = this.firebaseProvider.getPantryItems();
 
   }
@@ -45,11 +43,7 @@ export class PantryPage {
       this.navCtrl.push(RecipesPage, this.selected);
     }
   }
-  /*
-  checkAvailability(arr, val ){
-    return arr.some(arrVal =>  val === arrVal);
-  }
-  */
+
   checkAvailability(arr, val) {
   return arr.some(function(arrVal) {
     return val === arrVal;
@@ -81,10 +75,6 @@ export class PantryPage {
 }
   getRecipes(){
     console.log('test');
-    for(let i of this.ingredients){
-      console.log(i);
-      this.localStorage.setIngredients(i);
-    }
     this.storage.set('thelist', JSON.stringify(this.ingredients));
     this.recipeService.callFunc();
 

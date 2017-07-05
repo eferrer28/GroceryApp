@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
-import { LocalstorageProvider } from '../../providers/localstorage/localstorage';
 import {Storage} from '@ionic/storage';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -23,11 +21,9 @@ export class RecipesPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public recipeService: RecipeServiceProvider,
-    public localStorage: LocalstorageProvider,
     public storage: Storage) {
     console.log("hey!")
 
-    //this.name = recipeService.getData();
 
   }
 
@@ -39,9 +35,6 @@ export class RecipesPage {
           console.log(this.ourList);
         });
 
-    console.log(this.navParams.get('selected'));
-
-    //this.recipeService.callFunc();
 
     console.log('ionViewDidLoad RecipesPage');
     this.recipeService.loadStuff().subscribe(
