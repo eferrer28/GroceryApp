@@ -29,12 +29,13 @@ export class RecipesPage {
   }
 
   ionViewDidLoad() {
-
+    /*
     this.storage.get('thelist').then(data => {
           console.log(data);
           this.ourList = JSON.parse(data);
           console.log(this.ourList);
         });
+        */
 
 
     console.log('ionViewDidLoad RecipesPage');
@@ -47,7 +48,12 @@ export class RecipesPage {
   }
 
   fetchRecipe(id){
-    this.navCtrl.push(RecipeDetailsPage, id);
+    //this.navCtrl.push(RecipeDetailsPage, id);
+    console.log(id);
+    this.storage.set('theID', JSON.stringify(id));
+    this.recipeService.callFunc2();
+    //this.navCtrl.push(RecipeDetailsPage);
+
   }
 
 }
