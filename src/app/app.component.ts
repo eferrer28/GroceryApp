@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PantryPage } from '../pages/pantry/pantry';
 import { RecipesPage } from '../pages/recipes/recipes';
+import { RecipeDetailsPage } from '../pages/recipe-details/recipe-details';
 
 
 @Component({
@@ -28,6 +29,7 @@ export class MyApp {
       { title: 'Pantry', component: PantryPage },
       { title: 'Recipes', component: RecipesPage },
       { title: 'List', component: ListPage }
+
     ];
 
   }

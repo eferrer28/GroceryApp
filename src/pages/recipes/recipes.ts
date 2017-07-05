@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
 import {Storage} from '@ionic/storage';
 import { Observable } from 'rxjs/Observable';
+import { RecipeDetailsPage } from '../../pages/recipe-details/recipe-details';
 import 'rxjs/add/operator/map';
 
 
@@ -43,6 +44,10 @@ export class RecipesPage {
       console.log(JSON.stringify(this.recipeData));
     });
 
+  }
+
+  fetchRecipe(id){
+    this.navCtrl.push(RecipeDetailsPage, id);
   }
 
 }

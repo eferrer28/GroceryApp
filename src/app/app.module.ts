@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PantryPage } from '../pages/pantry/pantry';
+import { RecipeDetailsPage } from '../pages/recipe-details/recipe-details';
 import { RecipesPage } from '../pages/recipes/recipes';
 
 
@@ -37,7 +38,8 @@ const firebaseConfig = {
     HomePage,
     ListPage,
     PantryPage,
-    RecipesPage
+    RecipesPage,
+    RecipeDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ const firebaseConfig = {
     HomePage,
     ListPage,
     PantryPage,
-    RecipesPage
+    RecipesPage,
+    RecipeDetailsPage
   ],
   providers: [
     StatusBar,

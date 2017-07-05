@@ -19,6 +19,7 @@ export class RecipeDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipeDetailsPage');
+    console.log(this.navParams.get('data'));
   }
 
 }
