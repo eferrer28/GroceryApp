@@ -10,6 +10,7 @@ export class RecipeServiceProvider {
   lessons = [];
   ourList = [];
   idInfo = [];
+  id: number = 0;
 
   constructor(public http: Http,
     public storage: Storage) {
@@ -33,7 +34,10 @@ export class RecipeServiceProvider {
            console.log(data);
            this.idInfo = JSON.parse(data);
          //this.ourList = data;
+         this.id = this.idInfo['id'];
+         console.log(this.id);
            console.log((this.idInfo)['id'])
+           this.getSteps();
          });
 
    }
@@ -73,6 +77,10 @@ export class RecipeServiceProvider {
           this.ourList = JSON.parse(data);
           console.log(this.ourList);
         });
+  }
+
+  getSteps(){
+    console.log("getting shits done");
   }
 
 }
