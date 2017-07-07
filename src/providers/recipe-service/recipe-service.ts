@@ -17,7 +17,6 @@ export class RecipeServiceProvider {
     console.log('Hello RecipeServiceProvider Provider');
 
 
-
   }
   callFunc(){
     this.storage.get('thelist').then(data => {
@@ -29,16 +28,33 @@ export class RecipeServiceProvider {
 
   }
 
+  gettingId(){
+    this.storage.get('theID').then(data => {
+          console.log(data);
+          this.idInfo = JSON.parse(data);
+        //this.ourList = data;
+        this.id = this.idInfo['id'];
+        console.log(this.id);
+          console.log((this.idInfo)['id'])
+         // this.getSteps();
+       });
+  }
+
+
+
    callFunc2(){
-     this.storage.get('theID').then(data => {
-           console.log(data);
-           this.idInfo = JSON.parse(data);
-         //this.ourList = data;
-         this.id = this.idInfo['id'];
-         console.log(this.id);
-           console.log((this.idInfo)['id'])
-           this.getSteps();
-         });
+
+
+
+         console.log("mmm hmm ");
+         let opt: RequestOptions;
+         let myHeaders: Headers = new Headers;
+         myHeaders.append('X-Mashape-Key', 'KMFbmMJvR5mshlzIpvvR6AEKR5TGp1ISCRJjsnd550UPefSzse');
+         myHeaders.append('Content-type', 'application/json');
+         opt = new RequestOptions({
+         headers: myHeaders
+       })
+         return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+this.id+'/analyzedInstructions', opt).map(res => res.json())
 
    }
 
@@ -79,8 +95,7 @@ export class RecipeServiceProvider {
         });
   }
 
-  getSteps(){
-    console.log("getting shits done");
-  }
+
+
 
 }

@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
 import {Storage} from '@ionic/storage';
-import { Observable } from 'rxjs/Observable';
 import { RecipeDetailsPage } from '../../pages/recipe-details/recipe-details';
 import 'rxjs/add/operator/map';
 
@@ -25,7 +24,6 @@ export class RecipesPage {
     public storage: Storage) {
     console.log("hey!")
 
-
   }
 
   ionViewDidLoad() {
@@ -44,15 +42,16 @@ export class RecipesPage {
       console.log(data);
       console.log(JSON.stringify(this.recipeData));
     });
-
   }
 
   fetchRecipe(id){
     //this.navCtrl.push(RecipeDetailsPage, id);
     console.log(id);
     this.storage.set('theID', JSON.stringify(id));
-    this.recipeService.callFunc2();
-    //this.navCtrl.push(RecipeDetailsPage);
+    //this.recipeService.callFunc2(id);
+  //  this.recipeService.gettingId();
+
+    this.navCtrl.push(RecipeDetailsPage);
 
   }
 
