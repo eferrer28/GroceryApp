@@ -43,9 +43,10 @@ export class RecipeServiceProvider {
        });
   }
 
-   callFunc2(){
+   callFunc2(id){
 
          console.log("mmm hmm ");
+         console.log(id);
          let opt: RequestOptions;
          let myHeaders: Headers = new Headers;
          myHeaders.append('X-Mashape-Key', 'KMFbmMJvR5mshlzIpvvR6AEKR5TGp1ISCRJjsnd550UPefSzse');
@@ -53,7 +54,7 @@ export class RecipeServiceProvider {
          opt = new RequestOptions({
          headers: myHeaders
        })
-         return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+this.id+'/analyzedInstructions', opt).map(res => res.json())
+         return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+id+'/analyzedInstructions', opt).map(res => res.json())
 
    }
 

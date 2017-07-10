@@ -14,6 +14,8 @@ import {Storage} from '@ionic/storage';
 export class RecipeDetailsPage {
 
   recipeSteps = [];
+  id: number = 0;
+
 
 
   constructor(public navCtrl: NavController,
@@ -42,14 +44,14 @@ export class RecipeDetailsPage {
 
   doObservable(){
     //this.recipeService.gettingId();
-    console.log(this.navParams.get('param'));
-    /*
-    this.recipeService.callFunc2().subscribe(
+    this.id = this.navParams.get('param');
+
+    this.recipeService.callFunc2(this.id).subscribe(
       data => {this.recipeSteps = data
       console.log(data);
       console.log(JSON.stringify(this.recipeSteps));
     });
-    */
+
 
   }
 }
