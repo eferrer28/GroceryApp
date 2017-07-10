@@ -16,15 +16,18 @@ export class RecipeServiceProvider {
     public storage: Storage) {
     console.log('Hello RecipeServiceProvider Provider');
 
-
   }
-  callFunc(){
+  callFunc(num){
+    console.log(num);
+    this.ourList = num;
+    /*
     this.storage.get('thelist').then(data => {
           console.log(data);
           this.ourList = JSON.parse(data);
         //this.ourList = data;
           console.log(this.ourList);
         });
+    */
 
   }
 
@@ -40,11 +43,7 @@ export class RecipeServiceProvider {
        });
   }
 
-
-
    callFunc2(){
-
-
 
          console.log("mmm hmm ");
          let opt: RequestOptions;
@@ -94,8 +93,6 @@ export class RecipeServiceProvider {
           console.log(this.ourList);
         });
   }
-
-
 
 
 }

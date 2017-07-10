@@ -19,6 +19,7 @@ export class PantryPage {
   currentSelected: number = null;
   hightlightStatus: Array<boolean> = [];
   ingredients = [];
+  ourList = [];
 
 
 
@@ -34,15 +35,11 @@ export class PantryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PantryPage');
+    this.storage.clear();
+
   }
 
-  onSelect(){
-    if(this.selected.length == 3){
-      console.log("fuck");
-      console.log(this.selected);
-      this.navCtrl.push(RecipesPage, this.selected);
-    }
-  }
+
 
   checkAvailability(arr, val) {
   return arr.some(function(arrVal) {
@@ -73,10 +70,22 @@ export class PantryPage {
 
 
 }
+
   getRecipes(){
+
+    /*
     console.log('test');
-    this.storage.set('thelist', JSON.stringify(this.ingredients));
-    this.recipeService.callFunc();
+    this.storage.length().then(result => {
+      if(result > 0){
+        console.log('wat');
+        this.storage.clear();
+      }
+    })
+    */
+
+
+  //this.storage.set('thelist', JSON.stringify(this.ingredients));
+    this.recipeService.callFunc(this.ingredients);
 
   //  this.storage.set('thelist', this.ingredients);
 
