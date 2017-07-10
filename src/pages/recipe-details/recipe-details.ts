@@ -15,6 +15,9 @@ export class RecipeDetailsPage {
 
   recipeSteps = [];
   id: number = 0;
+  keys: String[];
+
+
 
 
 
@@ -27,17 +30,7 @@ export class RecipeDetailsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecipeDetailsPage');
 
-    //this.recipeService.callFunc2();
 
-    /*
-    this.recipeService.callFunc2().subscribe(
-      data => {this.recipeSteps = data
-      console.log(data);
-      console.log(JSON.stringify(this.recipeSteps));
-    });
-
-    */
-    //this.recipeService.gettingId();
 
     this.doObservable();
   }
@@ -50,6 +43,7 @@ export class RecipeDetailsPage {
       data => {this.recipeSteps = data
       console.log(data);
       console.log(JSON.stringify(this.recipeSteps));
+      //this.keys = Object.keys(data);
     });
 
 

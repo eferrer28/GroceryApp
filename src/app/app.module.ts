@@ -19,6 +19,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { RecipeServiceProvider } from '../providers/recipe-service/recipe-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { KeysPipe } from '../pipes/keys/keys';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
@@ -39,7 +40,8 @@ const firebaseConfig = {
     ListPage,
     PantryPage,
     RecipesPage,
-    RecipeDetailsPage
+    RecipeDetailsPage,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

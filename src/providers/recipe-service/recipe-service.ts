@@ -20,28 +20,11 @@ export class RecipeServiceProvider {
   callFunc(num){
     console.log(num);
     this.ourList = num;
-    /*
-    this.storage.get('thelist').then(data => {
-          console.log(data);
-          this.ourList = JSON.parse(data);
-        //this.ourList = data;
-          console.log(this.ourList);
-        });
-    */
+
 
   }
 
-  gettingId(){
-    this.storage.get('theID').then(data => {
-          console.log(data);
-          this.idInfo = JSON.parse(data);
-        //this.ourList = data;
-        this.id = this.idInfo['id'];
-        console.log(this.id);
-          console.log((this.idInfo)['id'])
-         // this.getSteps();
-       });
-  }
+
 
    callFunc2(id){
 
@@ -85,14 +68,6 @@ export class RecipeServiceProvider {
     return this.http.get('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients='+ str +'&limitLicense=false&number='+ lengthOf +'&ranking=1', opt).map(res => res.json())
 
 
-  }
-  getRecipe(){
-    //this.navCtrl.push(RecipeDetailsPage, id);
-    this.storage.get('thelist').then(data => {
-          console.log(data);
-          this.ourList = JSON.parse(data);
-          console.log(this.ourList);
-        });
   }
 
 
