@@ -41,14 +41,15 @@ export class RecipeDetailsPage {
   }
 
   doObservable(){
-    this.recipeService.gettingId();
-
+    //this.recipeService.gettingId();
+    console.log(this.navParams.get('param'));
+    /*
     this.recipeService.callFunc2().subscribe(
       data => {this.recipeSteps = data
       console.log(data);
       console.log(JSON.stringify(this.recipeSteps));
     });
-
+    */
 
   }
 }

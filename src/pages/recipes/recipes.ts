@@ -16,6 +16,8 @@ export class RecipesPage {
   //name: Observable<any>;
   recipeData = [];
   ourList = [];
+  theID: number = 0;
+
 
   constructor(public http: Http,
     public navCtrl: NavController,
@@ -47,12 +49,17 @@ export class RecipesPage {
   fetchRecipe(id){
     //this.navCtrl.push(RecipeDetailsPage, id);
     console.log(id);
+    this.theID = id['id'];
+    console.log(this.theID);
+    this.navCtrl.push(RecipeDetailsPage, {param: this.theID});
+
+    /*
     this.storage.set('theID', JSON.stringify(id));
     //this.recipeService.callFunc2(id);
   //  this.recipeService.gettingId();
 
     this.navCtrl.push(RecipeDetailsPage);
-
+    */
   }
 
 }
