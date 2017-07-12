@@ -17,8 +17,7 @@
 
   <ion-list>
     <ion-item *ngFor="let data of recipeSteps">
-
-     {{data.steps}}
+      <p *ngFor="let step of data.steps">{{step.step}}</p>
 </ion-item>
   </ion-list>
 

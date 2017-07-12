@@ -29,13 +29,6 @@ export class RecipesPage {
   }
 
   ionViewDidLoad() {
-    /*
-    this.storage.get('thelist').then(data => {
-          console.log(data);
-          this.ourList = JSON.parse(data);
-          console.log(this.ourList);
-        });
-        */
 
 
     console.log('ionViewDidLoad RecipesPage');
@@ -53,13 +46,7 @@ export class RecipesPage {
     console.log(this.theID);
     this.navCtrl.push(RecipeDetailsPage, {param: this.theID});
 
-    /*
-    this.storage.set('theID', JSON.stringify(id));
-    //this.recipeService.callFunc2(id);
-  //  this.recipeService.gettingId();
 
-    this.navCtrl.push(RecipeDetailsPage);
-    */
   }
 
 }

@@ -16,7 +16,7 @@ export class RecipeDetailsPage {
   recipeSteps = [];
   id: number = 0;
   keys: String[];
-
+  notSure = {};
 
 
 
@@ -33,7 +33,10 @@ export class RecipeDetailsPage {
 
 
     this.doObservable();
+    this.heh();
   }
+
+
 
   doObservable(){
     //this.recipeService.gettingId();
@@ -43,9 +46,25 @@ export class RecipeDetailsPage {
       data => {this.recipeSteps = data
       console.log(data);
       console.log(JSON.stringify(this.recipeSteps));
+      this.notSure = Object.keys(this.recipeSteps)
+      //console.log(this.notSure);
       //this.keys = Object.keys(data);
+
+
     });
 
 
   }
+
+  heh(){
+    for(let x of Object.keys(this.recipeSteps)){
+        console.log(x);
+    }
+
+  }
+
+
+
+
+
 }
