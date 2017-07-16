@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
 import {Storage} from '@ionic/storage';
 
 @IonicPage()

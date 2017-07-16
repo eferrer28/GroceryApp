@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-service';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
-import { RecipesPage } from '../../pages/recipes/recipes';
 import {Storage} from '@ionic/storage';
 
 
