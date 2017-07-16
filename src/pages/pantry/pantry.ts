@@ -4,6 +4,7 @@ import { RecipeServiceProvider } from '../../providers/recipe-service/recipe-ser
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseListObservable } from 'angularfire2/database';
 import {Storage} from '@ionic/storage';
+import { RecipesPage } from '../../pages/recipes/recipes';
 
 
 @IonicPage()
@@ -85,6 +86,8 @@ export class PantryPage {
 
   //this.storage.set('thelist', JSON.stringify(this.ingredients));
     this.recipeService.callFunc(this.ingredients);
+    this.navCtrl.push(RecipePage);
+
 
   //  this.storage.set('thelist', this.ingredients);
 
