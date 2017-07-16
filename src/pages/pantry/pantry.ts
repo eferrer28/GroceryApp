@@ -86,7 +86,7 @@ export class PantryPage {
 
   //this.storage.set('thelist', JSON.stringify(this.ingredients));
     this.recipeService.callFunc(this.ingredients);
-    this.navCtrl.push(RecipePage);
+    this.navCtrl.push(RecipesPage);
 
 
   //  this.storage.set('thelist', this.ingredients);

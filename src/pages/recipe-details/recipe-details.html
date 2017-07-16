@@ -14,12 +14,18 @@
 
 
 <ion-content padding>
-
+<!--
   <ion-list>
     <ion-item *ngFor="let data of recipeSteps">
-      <p *ngFor="let step of data.steps">{{step.step}}</p>
+      <ion-list *ngFor="let step of data.steps">{{step.step}}</ion-list>
 </ion-item>
   </ion-list>
-
+*/
+-->
+<ion-list *ngFor="let data of recipeSteps" text-wrap>
+  <ion-item *ngFor="let step of data.steps">
+    {{step.number}}. {{step.step}}
+</ion-item>
+</ion-list>
 
 </ion-content>
