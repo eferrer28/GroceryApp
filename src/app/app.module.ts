@@ -20,6 +20,7 @@ import { AngularFireModule } from 'angularfire2';
 import { RecipeServiceProvider } from '../providers/recipe-service/recipe-service';
 import { IonicStorageModule } from '@ionic/storage';
 import { KeysPipe } from '../pipes/keys/keys';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCCVJNUHxsVIPstdq_jaT0r0tZ1w_oE_N3g",
@@ -31,6 +32,11 @@ const firebaseConfig = {
 
 };
 
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '091d392f'
+  }
+};
 
 
 @NgModule({
@@ -49,7 +55,8 @@ const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp),
-        IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
