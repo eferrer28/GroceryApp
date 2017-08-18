@@ -10,7 +10,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class HomePage {
 
   splash = true;
-  secondPage = SecondPagePage;
+  //secondPage = SecondPagePage;
 
   shoppingItems: FirebaseListObservable<any[]>;
 
@@ -22,7 +22,9 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    setTimeOut(() => this.splash = false, 4000);
+    setTimeout(() => {
+      this.splash = false;
+    }, 4000);
   }
 
   addItem() {
