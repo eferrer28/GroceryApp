@@ -1,10 +1,18 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/logo.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Shopping List
+      A Recipe App
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -35,7 +43,13 @@
     </ion-item-sliding>
   </ion-list>
 
-  <button ion-button (click)="addToPantry()">Add to Pantry</button>
 
 
 </ion-content>
+
+
+<ion-footer>
+  <button ng-if="list.length > 0"  ion-button (click)="addToPantry()">Add to Pantry</button>
+
+
+</ion-footer>
