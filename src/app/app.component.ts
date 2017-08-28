@@ -43,7 +43,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      /*
+      
       this.deploy.check().then((snapshotAvailable: boolean) => {
           if (snapshotAvailable) {
             this.deploy.download().then(() => {
@@ -53,7 +53,7 @@ export class MyApp {
             });
           }
 });
-*/
+
 
     });
   }
