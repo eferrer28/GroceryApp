@@ -71,6 +71,10 @@ export class PantryPage {
 
 }
 
+removeItem(id) {
+  this.firebaseProvider.removePantryItem(id);
+}
+
   getRecipes(){
 
     /*

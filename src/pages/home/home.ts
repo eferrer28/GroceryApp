@@ -9,7 +9,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class HomePage {
 
-  splash = true;
+  //splash = true;
   //secondPage = SecondPagePage;
 
   shoppingItems: FirebaseListObservable<any[]>;
@@ -18,13 +18,18 @@ export class HomePage {
   list = [];
 
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
+    
     this.shoppingItems = this.firebaseProvider.getShoppingItems();
+    
+  
   }
 
   ionViewDidLoad(){
+    /*
     setTimeout(() => {
       this.splash = false;
     }, 4000);
+    */
   }
 
   addItem() {

@@ -23,6 +23,10 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems/').remove(id);
   }
 
+  removePantryItem(id) {
+    this.afd.list('/pantryItems/').remove(id);
+  }
+
   clearList() {
     this.afd.list('/shoppingItems').remove();
   }
