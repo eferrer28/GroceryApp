@@ -14,14 +14,40 @@
 
 <ion-content padding>
 
+  <!--
   <ion-list>
+    <ion-item-sliding>
     <button ion-item *ngFor="let item of pantryItems  | async; let idx = index"
     [attr.data-selected]="false"
     (click)="hightlightStatus[idx]=!hightlightStatus[idx]; add(item.$value, idx)"
     [class.selected]="hightlightStatus[idx]">
       {{ item.$value }}
-
     </button>
+  </ion-item-sliding>
+  
+
+
+</ion-list>
+
+-->
+
+<ion-list>
+    <ion-item-sliding *ngFor="let item of pantryItems  | async; let idx = index"
+    [attr.data-selected]="false"
+    (click)="hightlightStatus[idx]=!hightlightStatus[idx]; add(item.$value, idx)"
+   
+    
+    >
+    <button ion-item
+    [class.selected]="hightlightStatus[idx]"
+    >
+      {{ item.$value }}
+    </button>
+    <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removeItem(item.$key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+  </ion-item-sliding>
+  
 
 
 </ion-list>
